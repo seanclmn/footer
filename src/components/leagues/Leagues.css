@@ -1,0 +1,23 @@
+.leagues{
+
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 50px;
+    width: 100%;
+    height: 600px;
+}
+
+.link{
+
+    
+    text-decoration: none;
+    color: black;
+
+    
+    
+}:hover{
+    color: blue;
+}
+

@@ -1,0 +1,12 @@
+.side_and_main{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.main_container{
+  background-color: honeydew;
+  width: 800px;
+  height: 800px;
+
+}
