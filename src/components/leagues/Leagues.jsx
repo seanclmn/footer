@@ -6,60 +6,82 @@ import Standings from '../standings/Standings'
 function Leagues() {
     const[league,setLeague]=useState(2021)
     return (
-        <div>
-            <div className="leagues">
-                <Link to='/leagues/2001'>
-                    <p>test</p>
-                </Link> 
-                <Link to='/leagues/SA' className="link">
+        <div className="league_container">
+
+                
+            <Link to='/leagues/SA' className="league_link">
+                <button className="league_div">
                     <p>Seria A (Italy)</p>
-                </Link> 
+                </button>
+            </Link> 
+            
+                
 
-
-                <Link to='/leagues/PL' className="link">
-                    <p>Premier League (England)</p>
-                </Link>
-                <Link to='/leagues/2016' className="link">
+            <Link to='/leagues/PL' className="league_link">
+                <button className="league_div">
+                    <p>Premier League (England)</p>                
+                </button>
+            </Link>
+            <Link to='/leagues/2016' className="league_link">
+                <button className="league_div">
                     <p>EFL Championship (England)</p>
-                </Link>
-                {/* <Link to='/leagues/EL2'>
-                    <p>League One (England)</p>
-                </Link> */}
+                </button>
+                
+            </Link>
 
-                <Link to='/leagues/2017' className="link">
+
+            <Link to='/leagues/2017' className="league_link">
+
+                <button className="league_div">
                     <p>Primeira Liga (Portugal)</p>
-                </Link>    
+                </button>
 
-                <Link to='/leagues/FL1' className="link">
+                    
+            </Link>    
+
+            <Link to='/leagues/FL1' className="league_link">
+                <button className="league_div">
                     <p>Ligue 1 (France)</p>
-                </Link>   
-                {/* <Link to='/leagues/FL2'>
-                    <p>Ligue 2 (France)</p>
-                </Link> */}
+                </button>
+
+                    
+            </Link>   
 
 
-                <Link to='/leagues/PD' className="link">
+
+            <Link to='/leagues/PD' className="league_link">
+                <button className="league_div">
                     <p>La Liga (Spain)</p>
-                </Link>
-                <Link to='/leagues/2013' className="link">
+                </button>
+
+                    
+            </Link>
+            <Link to='/leagues/2013' className="league_link">
+                <button className="league_div">
                     <p>Campeonato Brasileiro A (Brazil)</p>
-                </Link>    
+                </button>
 
-                <Link to='/leagues/BL1' className="link">
+                    
+            </Link>    
+
+            <Link to='/leagues/BL1' className="league_link">
+                <button className="league_div">
                     <p>1. Bundesliga (Germany)</p>
-                </Link>
+                </button>
+      
+            </Link>
 
 
 
-                <Link to='/leagues/DED' className="link">
+            <Link to='/leagues/DED' className="league_link">
+                <button className="league_div">
                     <p>Eredivisie (Netherlands)</p>
-                </Link>
-            
-            
-            
+                </button>
+     
+                    
+            </Link>
             
 
-            </div>
     
         </div>
         

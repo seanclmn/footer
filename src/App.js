@@ -6,6 +6,7 @@ import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import Leagues from './components/leagues/Leagues'
 import Standings from './components/standings/Standings'
+import Matches from './components/matches/Matches'
 
 import './App.css'
 
@@ -19,8 +20,8 @@ function App() {
 
         <div className="main_container">
           <Route exact path = "/leagues" component={Leagues}/>
-          {/* <Route exact path="/leagues/:league" render = {(routerProps) =>{<Standings match= {routerProps.match} />}} /> */}
           <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings match={routerProps.match}/>}/>
+          <Route exact path = "/matches" component={Matches}/>
         </div>
 
       </div>

@@ -5,14 +5,29 @@ import './Sidebar.css'
 
 function Sidebar() {
     return (
-        <div className="sidebar">
-
-            <ul>
+        <div >
+            <nav className="sidebar">
                 <Link to="/leagues">
-                    <li>Leagues</li>
+                    <button className="sidebar_link">
+                        <p>Leagues</p>
+                    </button>
+                </Link >
+                <Link to="/matches">
+                    <button className="sidebar_link">
+                        <p>Matches</p>
+                    </button>
+                </Link >
+                <Link>
+                    <button className="sidebar_link">
+                        <p>Teams</p>
+                    </button>
                 </Link>
-                
-            </ul>
+                <Link >
+                    <button className="sidebar_link">
+                        <p>My Players</p>
+                    </button>
+                </Link>
+            </nav>
         </div>
     )
 }

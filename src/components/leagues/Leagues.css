@@ -1,23 +1,26 @@
-.leagues{
-
-
-    margin-left: auto;
-    margin-right: auto;
-
-    padding-left: 50px;
-    width: 100%;
-    height: 600px;
+html{
+    /* background-color: white; */
 }
-
-.link{
-
-    
+.league_link{
     text-decoration: none;
     color: black;
+    height: 40px;
+    width: 100%;
+ 
+}
+p{
+    line-height: 0
+}
+.league_div{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(233, 233, 233);
 
+    border-style: none;
+    text-align: left;
     
-    
-}:hover{
-    color: blue;
+}
+.league_div:hover{
+    background-color: rgb(212, 212, 212);
 }
 

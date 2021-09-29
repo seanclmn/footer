@@ -1,12 +1,18 @@
 .side_and_main{
+  height: 600px;
   display: flex;
   flex-direction: row;
-
 }
 
 .main_container{
-  background-color: honeydew;
-  width: 800px;
-  height: 800px;
+  background-color: rgb(233, 233, 233);
+  width: 70%;
+  min-width: 1000px;
+  height: 600px;
+  margin-left: 50px;
+  margin-top: 80px;
+  border-radius: 0px 0px 10px 10px;
 
+  padding-top: 10px;
+  padding-left: 20px;
 }
