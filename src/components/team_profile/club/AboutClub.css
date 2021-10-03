@@ -1,0 +1,39 @@
+.about_container{
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+
+    background-color: white;
+
+    min-width: 300px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 1em;
+    border-width: 1px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    text-align: center;
+    color: black;
+
+}
+
+#website{
+    text-decoration: none;
+    color: black;
+}
+
+#website_text:hover{
+    color: rgb(128, 128, 253)
+}
+
+.crest_url{
+
+    margin-left: auto;
+    margin-right: auto;
+}

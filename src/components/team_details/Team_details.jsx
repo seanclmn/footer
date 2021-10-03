@@ -27,7 +27,6 @@ function Team_details(props) {
         })
             .then((res)=>res.json())
             .then(res=>{
-                console.log(res)
                 setName(res.name)
                 setStadium(res.venue)
                 setCrestUrl(res.crestUrl)
@@ -42,6 +41,7 @@ function Team_details(props) {
         fetch_details()
 
     },[])
+
     return (
         <div className="team_details">
             <div className="team_detail_header">
@@ -68,13 +68,12 @@ function Team_details(props) {
             <div className="upcoming_matches">
                 <h4>Upcoming matches:</h4>
                 <br/>
-                <Upcoming_matches id={teamId} number={3}/>
+                <div className='upcoming_matches_component'>
+                    <Upcoming_matches id={teamId} number={3}/>
+                </div>
                 <br/>
+                
 
-            </div>
-
-            <div>
-                <button>Add to my teams</button>
             </div>
         </div>
     )

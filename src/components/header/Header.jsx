@@ -6,9 +6,9 @@ import LogoutButton from '../log_buttons/LogoutButton'
 function Header() {
     return (
         <div className="header_container">
-            <h2>Footer</h2>
-            <LoginButton/>
-            <LogoutButton/>
+            <img id="soccer_shoe" src={process.env.PUBLIC_URL+'/icons/soccer-shoe.png'}/>
+                <h2>Footer</h2>
+            
         </div>
     )
 }

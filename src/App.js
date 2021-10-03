@@ -5,7 +5,6 @@ import {BrowserRouter as Route} from 'react-router-dom'
 
 function App() {
 
-
   return (
     <div>
       {/* <Landing/>

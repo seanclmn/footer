@@ -1,5 +1,7 @@
 .team_details{
     width: 100%;
+    max-width: 700px;
+    height: 100%;
 }
 
 .team_detail_header{
@@ -18,20 +20,44 @@
 .active_competitions{
 
     padding-bottom: 10px;
-
+    
+    border-color: rgb(177, 177, 177); 
     border-top-style: solid;
     border-width: 1px;
 }
 
 .active_competitions_list{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+    width: 500px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    border-radius: 0.5em;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 
 .upcoming_matches{
+    border-color: rgb(177, 177, 177); 
     border-top-style: solid;
     border-width: 1px;
     text-align: center;
+
+}
+
+.upcoming_matches_component{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
 }

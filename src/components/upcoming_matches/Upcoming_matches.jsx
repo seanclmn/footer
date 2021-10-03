@@ -5,7 +5,7 @@ function Upcoming_matches(props) {
     const number = props.number
     const [competition,setCompetition]=useState([])
     const [teams,setTeams]=useState([])
-
+    const [dates,setDates]=useState([])
     const profile=[]
 
 
@@ -18,27 +18,25 @@ function Upcoming_matches(props) {
         })
             .then((res)=>res.json())
             .then(res=>{
-                // console.log(res)
+                console.log(res.matches)
                 setCompetition(res.matches.slice(0,number+1).map(game=> game.competition.name))
-
-                setTeams(res.matches.slice(0,number+1).map(game=> `${game.homeTeam.name} vs ${game.awayTeam.name}`))
+                setDates(res.matches.slice(0,number).map(game=> (new Date(game.utcDate)).toLocaleString()))
+                setTeams(res.matches.slice(0,number).map(game=> `${game.homeTeam.name} vs ${game.awayTeam.name}`))
             })
-
-
     }
 
     useEffect(()=>{
         fetch_matches()
     },[])
 
-    for(let i=1;i<number+1;i++){
-        profile.push([teams[i],competition[i]])
+    for(let i=0;i<number;i++){
+        profile.push([teams[i],competition[i],dates[i]])
     }
-    console.log(profile)
+
     return (
 
         <div>
-            {profile.map(element=><button className="upcoming_match"><p>{element[0]} ({element[1]}) <br/></p></button>)}        
+            {profile.map(element=><button className="upcoming_match"><p>{element[2]}</p> <p >{element[0]} ({element[1]}) <br/></p></button>)}        
 
         </div>
         

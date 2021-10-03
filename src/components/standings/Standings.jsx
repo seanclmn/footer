@@ -6,9 +6,9 @@ import './Standings.css'
 import Matches from '../matches/Matches'
 import Team_details from '../team_details/Team_details'
 import Upcoming_matches from '../upcoming_matches/Upcoming_matches'
-
+import AddTeam from '../CRUD/add_teams/AddTeam'
 function Standings(props) {
-
+    const json = props.json
     const rows = []
     const [url,setUrl]=useState('')
     const [teams,setTeams]=useState([])
@@ -46,15 +46,6 @@ function Standings(props) {
     }
 
 
-    function next(){
-        setIndex(index+1)
-    }
-
-    function back(){
-        if(index>0){
-            setIndex(index-1)
-        }
-    }
 
     useEffect(()=>{
         fetch_standings()
@@ -69,19 +60,12 @@ function Standings(props) {
         <div className="standings_container">
             <div className="standings">            
                 {teams.length !==0 ?
-               
+
                 <table>
-                     <button onClick={back}>back</button>
-
-                     <button onClick={next}>next</button>
-
                     <tr><th>Teams</th><th>Pts</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th></tr>
                     {rows.map(row=>
 
-                    <tr className="team_row"
-                    //  onClick={changeIndex(rows.indexOf(row))}
-                     
-                     >
+                    <tr className="team_row" onClick={()=>setIndex(rows.indexOf(row))}>
                         <td className="team_name">{rows.indexOf(row)+1}. {row[0]} </td>
                         <td>{row[1]}</td>
                         <td>{row[2]}</td>
@@ -96,8 +80,14 @@ function Standings(props) {
             </div>
 
             <div className="team_details_container">
+
                 {teamIds.length !==0 && <Team_details key={index} teamId={teamIds[index]}/>}   
+                <div className="add_team">
+                    <AddTeam json={json} teamName={teams[index]} id={teamIds[index]}/>
+                </div>
             </div>
+
+            
             
         </div>
 
