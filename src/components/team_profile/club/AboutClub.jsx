@@ -1,6 +1,9 @@
 import React from 'react'
 import './AboutClub.css'
 
+
+import AddTeam from '../../CRUD/add_teams/AddTeam'
+
 function AboutClub(props) {
     const founded = props.teamJson.founded
     const name = props.teamJson.name
@@ -18,6 +21,7 @@ function AboutClub(props) {
             <a href={website} id="website" >
                 <p>Website: <span id="website_text">{website}</span></p>
             </a>
+            <AddTeam id={props.teamJson.id} teamName={name} />
         </div>
     )
 }

@@ -1,7 +1,9 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,context} from 'react'
 import {useAuth0} from '@auth0/auth0-react'
-import {Route,BrowserRouter as Router,Switch} from 'react-router-dom'
+import {Route,BrowserRouter as Router,Switch,withRouter} from 'react-router-dom'
 import axios from 'axios'
+
+import './App.css'
 
 import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
@@ -13,7 +15,11 @@ import MyPlayers from './components/my_players/MyPlayers'
 import TeamProfile from './components/team_profile/TeamProfile'
 import MyProfile from './components/my_profile/MyProfile'
 
-import './App.css'
+
+import {createBrowserHistory} from 'history'
+
+export const customHistory = createBrowserHistory()
+
 
 
 
@@ -34,30 +40,25 @@ function App() {
 
     },[])
   return (
-    <Router>
-      <div>
-        <div className="side_and_main">
-          <Sidebar/>
+    <div>
+      <div className="side_and_main">
+        <Sidebar/>
 
-          <div className="main_container">
-            <Switch>
-              <Route exact path = "/leagues" component={Leagues}/>
-              <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings match={routerProps.match}/>}/>
-              <Route exact path = "/matches" component={Matches}/>
+        <div className="main_container">
+          <Switch>
+            <Route exact path = "/leagues" component={Leagues}/>
+            <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings key={window.location.pathname} match={routerProps.match}/>}/>
+            <Route exact path = "/matches" component={Matches}/>
 
-              <Route exact path = "/myteams" render={()=> <MyTeams/>}/>
-              <Route exact path= "/myplayers" component={MyPlayers}/>
+            <Route exact path = "/myteams" render={()=> <MyTeams/>}/>
+            <Route exact path= "/myplayers" component={MyPlayers}/>
 
-              <Route exact path= "/myprofile" component={MyProfile}/>
-            </Switch>
-          </div>
-
+            <Route exact path= "/myprofile" component={MyProfile}/>
+          </Switch>
         </div>
+
       </div>
-
-
-    </Router>
-
+    </div>
   );
 }
 

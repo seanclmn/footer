@@ -3,7 +3,7 @@
 
     min-width: 500px;
     height: 60px;
-    background-color: white;
+    background: linear-gradient(130deg,rgb(247, 217, 253),rgb(230, 230, 255));
 
     text-align: center;
     color: black;

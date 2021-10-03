@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { Link} from 'react-dom'
-import { BrowserRouter as Route } from 'react-router-dom'
+import { BrowserRouter as Router,Route,withRouter } from 'react-router-dom'
 import './Standings.css'
 
 import Matches from '../matches/Matches'
@@ -97,4 +97,4 @@ function Standings(props) {
     
 }
 
-export default Standings
+export default withRouter(Standings)

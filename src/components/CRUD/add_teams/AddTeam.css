@@ -1,17 +1,30 @@
 .add_button{
     margin-top: 30px;
 
-    background-color: white;
+    background: linear-gradient(rgb(255, 151, 151) 10%,rgb(0,0,0,0));
+	background-color: rgb(252, 178, 178);    
+    transition: 0.2s;
+    color: black;
     width: 100px;
     height: 40px;
 
-    border-radius: 2em;
     border-style: solid;
-    border-color: black;
+    border-radius: 1em;
+    border-color: white;
     border-width: 1px;
 }
 
 .add_button:hover{
-    width: 107px;
-    height: 42px;
+    background-color: rgb(255, 94, 94);
+    color: white;
+    width: 110px;    
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.add_button:active{
+    background-color: rgb(255, 94, 94);
+    color: white;
+    width: 100px;   
+    box-shadow: none;
 }

@@ -18,7 +18,7 @@
 .squad_container{
     margin-bottom: 20px;
 
-    background-color: white;
+    background: linear-gradient(130deg,rgb(250, 233, 255),rgb(233, 255, 244));
     width: 100%;
 
     min-width: 810px;

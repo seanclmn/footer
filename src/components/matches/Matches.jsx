@@ -1,42 +1,40 @@
 import React,{useEffect,useState} from 'react'
 
-
+import Match from './match/Match'
 function Matches() {
 
-    const [url,setUrl]=useState('')
-    const [matches,setMatches]=useState([{}])
-    const [match,setMatch]=useState([{}])
-    
+    const leagues = ["SPAIN: La Liga","ITALY: Serie A","ENGLAND: Premier League","FRANCE: Ligue 1","GERMANY: Bundesliga","PORTUGAL: Liga Portugal","BRASIL: Serie A"]
+    const [json,setJson]=useState([{}])
+    const [videos,setVideos]=useState('')
+
     function fetch_matches(){
 
-        const url ='https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED'
+        const url ='https://www.scorebat.com/video-api/v3/'
 
-        fetch(url,{
-            headers: {'X-AUTH-TOKEN': '161a865ec39e410b8a2318a7bf71e260'}
-        })
+        fetch(url)
             .then((res)=>res.json())
             .then(res=>{
-                console.log()
-                setMatch(res)
+                setJson(res.response.filter(object=>(leagues.includes(object.competition) && ('videos' in object))))
+                setVideos(res.response.filter(object=>(leagues.includes(object.competition) && ('videos' in object))).map(object=>object.videos[0].embed.split('src=')[1].split(' ')[0].slice(1, -1)))
             })
 
 
     }
 
     useEffect(()=>{
-
         fetch_matches()
 
     },[])
 
+    console.log(json)
+
     window.scrollTo(0, 0)
 
     return (
-        <div>
-            <p>
-                {/* away team: {match.awayTeam.name}, home team: {match.homeTeam.name} */}
-            </p>
-
+        <div className="matches">
+                {json!==undefined ? json.map(match=><Match video = {videos[json.indexOf(match)]} object={match}/>): <p>hehe</p>}
+                
+                {/* <Match video = {videos[json.indexOf(json[0])]} object={json[0]}/> */}
 
         </div>
     )

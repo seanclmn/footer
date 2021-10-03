@@ -81,7 +81,7 @@ function Sidebar() {
                     <img className="sidebar_icon" src={process.env.PUBLIC_URL+'/icons/tv.png'}/>
                     <Link to="/matches">
                         <button className="sidebar_link">
-                            <p>Live Matches</p>
+                            <p>Match Highlights</p>
                         </button>
                     </Link >
                 </div>
