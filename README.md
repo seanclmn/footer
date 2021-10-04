@@ -1,5 +1,10 @@
 # Footer
 
+
+## Description
+
+This project was started to allow football fans to follow their favorite teams by exploring the top leagues, and then adding teams to their personal dashboard. Users can also watch match highlights from recent games, as well as see upcoming fixtures and league data. The players section is still in production.
+
 NOTE: the main web API being used (for standings and club info) has a call limit of 10 calls per minute.
 
 Deployed App: https://footerfront.herokuapp.com/
@@ -14,3 +19,6 @@ This was the original wireframe. During production, there were significant chang
 
 ![Untitled drawing](https://media.git.generalassemb.ly/user/37214/files/e1c36e80-1bfd-11ec-87f8-228b4569ef96)
 
+## Getting Started 
+
+To get started, click the link next to deployed app, and sign up for an account. Then explore the different leagues, and then click on teams to see their information. If you are interested in following the team, click 'Add Team' to add the team to your personalized dashboard. Then proceed to 'my teams' to see more information about your new club.
