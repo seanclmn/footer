@@ -68,7 +68,6 @@ function Home(props) {
 
         <div className="main_container">
           <Switch>
-            <MyProfile index={index}/>
             <Route exact path = "/leagues" component={Leagues}/>
             <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings index={index} key={window.location.pathname} match={routerProps.match}/>}/>
             <Route exact path = "/matches" component={Matches}/>
@@ -77,6 +76,7 @@ function Home(props) {
             <Route exact path= "/myplayers" component={MyPlayers}/>
 
             <Route exact path= "/myprofile" render={()=> <MyProfile index={index}/>}/>
+            <Route exact path= "/" render={()=> <MyProfile index={index}/>}/>
           </Switch>
         </div>
 
