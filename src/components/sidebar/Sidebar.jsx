@@ -39,14 +39,14 @@ function Sidebar() {
                 </div>
 
     
-                <div className="sidebar_panel">
+                {/* <div className="sidebar_panel">
                     <img className="sidebar_icon" src={process.env.PUBLIC_URL+'/icons/football-player.png'}/>
                     <Link to="/myplayers">
                         <button className="sidebar_link">
                             <p >My Players</p>
                         </button>
                     </Link>
-                </div>
+                </div> */}
 
                     
                 <div className="sidebar_panel">
