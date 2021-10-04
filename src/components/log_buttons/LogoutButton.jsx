@@ -6,7 +6,7 @@ import './LogoutButton.css'
 function LogoutButton() {
     const { logout } = useAuth0()
     return (
-        <button className = "logoutbutton" onClick={()=>logout({ returnTo: 'http:/localhost:3000/leagues'})}>
+        <button className = "logoutbutton" onClick={()=>logout({ returnTo: 'https://footerfront.herokuapp.com'})}>
             <p>Log out</p>
         </button>
     )
