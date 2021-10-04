@@ -76,6 +76,7 @@ function Home(props) {
             <Route exact path= "/myplayers" component={MyPlayers}/>
 
             <Route exact path= "/myprofile" render={()=> <MyProfile index={index}/>}/>
+            <Route exact path= "/" render={()=> <MyProfile index={index}/>}/>
           </Switch>
         </div>
 
