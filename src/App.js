@@ -8,12 +8,12 @@ function App() {
   const user_object = user
   return (
     <div>
-      {/* {isAuthenticated ?       
+      {isAuthenticated ?       
         <Home user_object={user_object}/>
         :
         <Landing/>
-      } */}
-      <Home user_object={user_object}/>
+      }
+      {/* <Home user_object={user_object}/> */}
     </div>
   );
 }
