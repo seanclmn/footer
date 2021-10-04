@@ -23,22 +23,44 @@ export const customHistory = createBrowserHistory()
 
 
 
-function App() {
-  const [userProfile,setUserProfile]=useState({})
+function Home(props) {
   const [json,setJson]=useState([{}])
-  const [userInfo,setUserInfo]=useState({})
-    
+  const [index,setIndex]=useState(0)
 
   useEffect(()=>{
-
-    axios
-      .get('http://footerserver.herokuapp.com/api/users')
-      .then(res=>{
-        setJson(res.data)
-        console.log(json)
+      axios
+        .get('http://footerserver.herokuapp.com/api/users')
+        .then(res=>{
+          if((res.data.filter(object=>object.email===props.user_object.email)).length===0){
+            console.log((res.data.filter(object=>object.email===props.user_object.email)).length)
+            setIndex(res.data.length)
+            add_user_to_database()
+            
+      
+          }else{
+            setIndex(res.data.indexOf((res.data.filter(object=>object.email===props.user_object.email))[0]))
+            console.log(res.data.indexOf((res.data.filter(object=>object.email===props.user_object.email))[0]))
+          }
       })
+  
 
     },[])
+
+
+  function add_user_to_database(){
+    const data = {
+      email: props.user_object.email,
+      players: [],
+      teams: []
+    }
+
+    axios
+      .post('http://footerserver.herokuapp.com/api/users',data)
+
+  }
+
+  console.log(index)
+
   return (
     <div>
       <div className="side_and_main">
@@ -47,13 +69,13 @@ function App() {
         <div className="main_container">
           <Switch>
             <Route exact path = "/leagues" component={Leagues}/>
-            <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings key={window.location.pathname} match={routerProps.match}/>}/>
+            <Route exact path = "/leagues/:league" render = {(routerProps)=><Standings index={index} key={window.location.pathname} match={routerProps.match}/>}/>
             <Route exact path = "/matches" component={Matches}/>
 
-            <Route exact path = "/myteams" render={()=> <MyTeams/>}/>
+            <Route exact path = "/myteams" render={()=> <MyTeams index={index}/>}/>
             <Route exact path= "/myplayers" component={MyPlayers}/>
 
-            <Route exact path= "/myprofile" component={MyProfile}/>
+            <Route exact path= "/myprofile" render={()=> <MyProfile index={index}/>}/>
           </Switch>
         </div>
 
@@ -62,4 +84,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

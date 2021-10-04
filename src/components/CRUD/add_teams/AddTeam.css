@@ -1,10 +1,10 @@
 .add_button{
     margin-top: 30px;
 
-    background: linear-gradient(rgb(255, 151, 151) 10%,rgb(0,0,0,0));
-	background-color: rgb(252, 178, 178);    
+    background: linear-gradient(rgb(0,0,0,0) 5%,rgb(82, 85, 253));
+	background-color: rgb(178, 185, 252);    
     transition: 0.2s;
-    color: black;
+    color: white;
     width: 100px;
     height: 40px;
 
@@ -15,7 +15,7 @@
 }
 
 .add_button:hover{
-    background-color: rgb(255, 94, 94);
+    background-color: rgb(82, 85, 253);
     color: white;
     width: 110px;    
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -23,8 +23,44 @@
 }
 
 .add_button:active{
+    width: 100px;   
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+.remove_button{
+    margin-top: 30px;
+
+    background: linear-gradient(rgb(0,0,0,0) 5%,rgb(253, 82, 82));
+	background-color: rgb(252, 178, 178);    
+    transition: 0.2s;
+    color: white;
+    width: 100px;
+    height: 40px;
+
+    border-style: solid;
+    border-radius: 1em;
+    border-color: white;
+    border-width: 1px;
+}
+
+.remove_button:hover{
     background-color: rgb(255, 94, 94);
     color: white;
+    width: 110px;    
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.remove_button:active{
+    background-color: rgb(255, 94, 94);
     width: 100px;   
     box-shadow: none;
 }

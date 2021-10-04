@@ -21,7 +21,7 @@ function AboutClub(props) {
             <a href={website} id="website" >
                 <p>Website: <span id="website_text">{website}</span></p>
             </a>
-            <AddTeam id={props.teamJson.id} teamName={name} />
+            <AddTeam id={props.teamJson.id} teamName={name} index={props.index}/>
         </div>
     )
 }

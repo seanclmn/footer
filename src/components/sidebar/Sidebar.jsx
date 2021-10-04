@@ -5,6 +5,7 @@ import Header from '../header/Header'
 import LogoutButton from '../log_buttons/LogoutButton'
 import Leagues from '../leagues/Leagues'
 import './Sidebar.css'
+import LoginButton from '../log_buttons/LoginButton'
 
 function Sidebar() {
 
@@ -37,7 +38,7 @@ function Sidebar() {
                     </Link>
                 </div>
 
-
+    
                 <div className="sidebar_panel">
                     <img className="sidebar_icon" src={process.env.PUBLIC_URL+'/icons/football-player.png'}/>
                     <Link to="/myplayers">
@@ -58,6 +59,11 @@ function Sidebar() {
                     </Link>
                 </div>
 
+
+                <div className="sidebar_panel">
+                    <img className="sidebar_icon" src={process.env.PUBLIC_URL+'/icons/key.png'}/>
+                    <LogoutButton/>
+                </div>
 
                 <div className="sidebar_panel">
                     <p className="dividers">Explore</p>

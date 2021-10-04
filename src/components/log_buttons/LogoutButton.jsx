@@ -6,9 +6,9 @@ import './LogoutButton.css'
 function LogoutButton() {
     const { logout } = useAuth0()
     return (
-        <a className = "logoutbutton" onClick={()=>logout({ returnTo: 'http:/localhost:3000/leagues'})}>
-            <h4>Log out</h4>
-        </a>
+        <button className = "logoutbutton" onClick={()=>logout({ returnTo: 'http:/localhost:3000/leagues'})}>
+            <p>Log out</p>
+        </button>
     )
 }
 

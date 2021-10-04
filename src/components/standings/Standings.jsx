@@ -82,9 +82,7 @@ function Standings(props) {
             <div className="team_details_container">
 
                 {teamIds.length !==0 && <Team_details key={index} teamId={teamIds[index]}/>}   
-                <div className="add_team">
-                    <AddTeam json={json} teamName={teams[index]} id={teamIds[index]}/>
-                </div>
+                <AddTeam json={json} teamName={teams[index]} id={teamIds[index]} index={props.index}/>
             </div>
 
             

@@ -36,7 +36,7 @@ function TeamProfile(props) {
     return (
         <div className="profile_container">
             <div className="upcoming_matches_container" >
-                <AboutClub teamJson = {teamJson}/>
+                <AboutClub teamJson = {teamJson} index={props.index}/>
                 <Upcoming_matches id={id} number = {6} />
             </div>
 

@@ -4,7 +4,7 @@ import axios from 'axios'
 import './AddTeam.css'
 
 function AddTeam(props) {
-
+    const index = props.index
     const id = props.id
     const teamName = props.teamName
     const[json,setJson]=useState([{}])
@@ -16,29 +16,29 @@ function AddTeam(props) {
           .get('http://footerserver.herokuapp.com/api/users')
           .then(res=>{
             setJson(res.data)
-            setTeams(res.data[0].teams)
-            setVal(res.data[0].teams.find(team => team[0]===id))
+            setTeams(res.data[index].teams)
+            setVal(res.data[index].teams.find(team => team[0]===id))
+            console.log(res.data[index].teams.find(team => team[0]===id))
           })
-        },[json])
-
+        },[team])
 
     
 
 
     function add(){
 
-        setJson(json[0].teams.push([id,teamName]))
+        setJson(json[index].teams.push([id,teamName]))
         axios
-            .put(`http://footerserver.herokuapp.com/api/users/${json[0]._id}`,json[0])
+            .put(`http://footerserver.herokuapp.com/api/users/${json[index]._id}`,json[index])
             .catch((err)=> console.log(err))
             .then(console.log(json))
         }
     
     function remove(){
-        const index = json[0].teams.indexOf([id,teamName])
-        setJson(json[0].teams.splice(index,1))
+        const thing = json[index].teams.indexOf([id,teamName])
+        setJson(json[index].teams.splice(thing,1))
         axios
-            .put(`http://footerserver.herokuapp.com/api/users/${json[0]._id}`,json[0])
+            .put(`http://footerserver.herokuapp.com/api/users/${json[index]._id}`,json[index])
             .catch((err)=> console.log(err))
             .then(console.log(json))
         }
@@ -48,7 +48,7 @@ function AddTeam(props) {
         <div>
             {val!==undefined ?
             
-                <button onClick={remove} className="add_button">
+                <button onClick={remove} className="remove_button">
                     Remove Team
                 </button>
 

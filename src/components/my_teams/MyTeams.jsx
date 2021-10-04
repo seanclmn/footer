@@ -16,11 +16,11 @@ function MyTeams(props) {
           .then((res)=>res.json())
 
           .then(res=>{
-            setJson(res[0])
-            setTeams(res[0].teams)
+            setJson(res[props.index])
+            setTeams(res[props.index].teams)
+            console.log(res[props.index])
           })
     },[])
-    console.log(teams[index])
 
     return (
       <Router>
@@ -30,7 +30,7 @@ function MyTeams(props) {
             </div>
             <div className="team_profile_container">
               {teams.length!==0 &&
-              <Route exact path='/myteams' render={()=><TeamProfile key={index} id={teams[index][0]}/>}/> }
+              <Route exact path='/myteams' render={()=><TeamProfile key={index} id={teams[index][0]} index={props.index}/>}/> }
             </div>
         </div>
       </Router>
