@@ -22,3 +22,5 @@ This was the original wireframe. During production, there were significant chang
 ## Getting Started 
 
 To get started, click the link next to deployed app, and sign up for an account. Then explore the different leagues, and then click on teams to see their information. If you are interested in following the team, click 'Add Team' to add the team to your personalized dashboard. Then proceed to 'my teams' to see more information about your new club.
+
+To suggest any changes, just submit an issue. Feel free to make a pull request if you developed any interesting additions.
