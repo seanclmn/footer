@@ -1,5 +1,7 @@
 # Footer
-
+Deployed App: https://footerfront.herokuapp.com/ 
+Demo email: demo@demo.com
+Password: Password123!
 
 ## Description
 
