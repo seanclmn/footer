@@ -21,7 +21,7 @@ function MyProfile(props) {
         <div className="profile">
             <img src={user.picture}/>
             {user.email}
-            <p>Teams: {teams.map(team=><p>{team[1]}<br/></p>)}</p>
+            {/* <p>Teams: {teams.map(team=><p>{team[1]}<br/></p>)}</p> */}
 
         </div>
     )
