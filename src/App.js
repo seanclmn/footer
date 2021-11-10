@@ -13,7 +13,6 @@ function App() {
         :
         <Landing/>
       }
-      {/* <Home user_object={user_object}/> */}
     </div>
   );
 }
