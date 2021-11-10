@@ -14,7 +14,7 @@ function Upcoming_matches(props) {
         const url =`https://api.football-data.org/v2/teams/${props.id}/matches?status=SCHEDULED`
 
         fetch(url,{
-            headers: {'X-AUTH-TOKEN': '161a865ec39e410b8a2318a7bf71e260'}
+            headers: {'X-AUTH-TOKEN': `${process.env.REACT_APP_FOOTBALL_DATA_TOKEN}`}
         })
             .then((res)=>res.json())
             .then(res=>{
